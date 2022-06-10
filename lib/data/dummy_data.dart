@@ -6,52 +6,52 @@ import '../models/meal.dart';
 const DUMMY_CATEGORIES = const [
   Category(
     id: 'c1',
-    tittle: 'Italian',
+    title: 'Italian',
     color: Colors.purple,
   ),
   Category(
     id: 'c2',
-    tittle: 'Quick & Easy',
+    title: 'Quick & Easy',
     color: Colors.red,
   ),
   Category(
     id: 'c3',
-    tittle: 'Hamburgers',
+    title: 'Hamburgers',
     color: Colors.orange,
   ),
   Category(
     id: 'c4',
-    tittle: 'German',
+    title: 'German',
     color: Colors.amber,
   ),
   Category(
     id: 'c5',
-    tittle: 'Light & Lovely',
+    title: 'Light & Lovely',
     color: Colors.blue,
   ),
   Category(
     id: 'c6',
-    tittle: 'Exotic',
+    title: 'Exotic',
     color: Colors.green,
   ),
   Category(
     id: 'c7',
-    tittle: 'Breakfast',
+    title: 'Breakfast',
     color: Colors.lightBlue,
   ),
   Category(
     id: 'c8',
-    tittle: 'Asian',
+    title: 'Asian',
     color: Colors.lightGreen,
   ),
   Category(
     id: 'c9',
-    tittle: 'French',
+    title: 'French',
     color: Colors.pink,
   ),
   Category(
     id: 'c10',
-    tittle: 'Summer',
+    title: 'Summer',
     color: Colors.teal,
   ),
 ];
@@ -63,7 +63,7 @@ const DUMMY_MEALS = const [
       'c1',
       'c2',
     ],
-    tittle: 'Spaghetti with Tomato Sauce',
+    title: 'Spaghetti with Tomato Sauce',
     affordability: Affordability.Affordable,
     complexity: Complexity.Simple,
     imageUrl:
@@ -96,7 +96,7 @@ const DUMMY_MEALS = const [
     categories: [
       'c2',
     ],
-    tittle: 'Toast Hawaii',
+    title: 'Toast Hawaii',
     affordability: Affordability.Affordable,
     complexity: Complexity.Simple,
     imageUrl:
@@ -125,7 +125,7 @@ const DUMMY_MEALS = const [
       'c2',
       'c3',
     ],
-    tittle: 'Classic Hamburger',
+    title: 'Classic Hamburger',
     affordability: Affordability.Pricey,
     complexity: Complexity.Simple,
     imageUrl:
@@ -156,7 +156,7 @@ const DUMMY_MEALS = const [
     categories: [
       'c4',
     ],
-    tittle: 'Wiener Schnitzel',
+    title: 'Wiener Schnitzel',
     affordability: Affordability.Luxurious,
     complexity: Complexity.Challenging,
     imageUrl:
@@ -193,7 +193,7 @@ const DUMMY_MEALS = const [
           'c5',
       'c10',
     ],
-    tittle: 'Salad with Smoked Salmon',
+    title: 'Salad with Smoked Salmon',
     affordability: Affordability.Luxurious,
     complexity: Complexity.Simple,
     imageUrl:
@@ -228,7 +228,7 @@ const DUMMY_MEALS = const [
       'c6',
       'c10',
     ],
-    tittle: 'Delicious Orange Mousse',
+    title: 'Delicious Orange Mousse',
     affordability: Affordability.Affordable,
     complexity: Complexity.Hard,
     imageUrl:
@@ -263,7 +263,7 @@ const DUMMY_MEALS = const [
     categories: [
       'c7',
     ],
-    tittle: 'Pancakes',
+    title: 'Pancakes',
     affordability: Affordability.Affordable,
     complexity: Complexity.Simple,
     imageUrl:
@@ -294,7 +294,7 @@ const DUMMY_MEALS = const [
     categories: [
       'c8',
     ],
-    tittle: 'Creamy Indian Chicken Curry',
+    title: 'Creamy Indian Chicken Curry',
     affordability: Affordability.Pricey,
     complexity: Complexity.Challenging,
     imageUrl:
@@ -327,7 +327,7 @@ const DUMMY_MEALS = const [
     categories: [
       'c9',
     ],
-    tittle: 'Chocolate Souffle',
+    title: 'Chocolate Souffle',
     affordability: Affordability.Affordable,
     complexity: Complexity.Hard,
     imageUrl:
@@ -378,7 +378,7 @@ const DUMMY_MEALS = const [
       'c5',
       'c10',
     ],
-    tittle: 'Asparagus Salad with Cherry Tomatoes',
+    title: 'Asparagus Salad with Cherry Tomatoes',
     affordability: Affordability.Luxurious,
     complexity: Complexity.Simple,
     imageUrl:

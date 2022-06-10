@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mealsappp/category_meals.dart';
-import './categories.dart';
+import '../screens/category_meals.dart';
+import '../screens/meal_detail.dart';
+import 'screens/categories.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,9 +12,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'DeliMeals',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
-        accentColor: Colors.amber,
-        canvasColor: Color.fromRGBO(255, 254, 229, 1),
+        primarySwatch: Colors.blue,
+        accentColor: Colors.green,
+        canvasColor: Color.fromARGB(255, 229, 255, 238),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
             bodyText1: TextStyle(
@@ -36,7 +37,8 @@ class MyApp extends StatelessWidget {
       // home:Categories() ,
       routes: {
         '/': (context) => Categories(),
-        CategoryMeals.routeName: (context) => CategoryMeals(),
+        CategoryMeals.routeName: (ctx) => CategoryMeals(),
+        MealDetails.routeName: (ctx) => MealDetails(),
       },
     );
   }

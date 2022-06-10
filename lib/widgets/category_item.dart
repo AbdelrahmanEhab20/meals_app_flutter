@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
-import './category_meals.dart';
+import '../screens/category_meals.dart';
 
-class CategoryItem extends StatelessWidget {
+class property extends StatelessWidget {
   final String id;
-  final String tittle;
+  final String title;
   final Color color;
 
   //Constructor of The Class
-  CategoryItem(this.id, this.tittle, this.color);
+  property(this.id, this.title, this.color);
 
+  //Navigator Function passed in onTap: ()=> Will be Called as Push() before we editing the route property in main.dart
+  // void selectCategory(BuildContext ctx) {
+  //   Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
+  //     return CategoryMeals(id, title);
+  //   }));
+  // }
+//Navigator Function passed in onTap: ()=> Will be Called as PushNamed() after we editing the route property in main.dart
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(CategoryMeals.routeName,
-        arguments: {'id': id, 'tittle': tittle});
+        arguments: {'id': id, 'title': title});
   }
 
   @override
@@ -23,7 +30,7 @@ class CategoryItem extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(15),
         child: Text(
-          tittle,
+          title,
           style: Theme.of(context).textTheme.subtitle1,
         ),
         decoration: BoxDecoration(
