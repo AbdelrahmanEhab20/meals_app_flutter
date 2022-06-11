@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mealsappp/screens/meal_detail.dart';
-import '../models/meal.dart';
+import '../screens/meal_detail.dart';
+import 'package:mealsappp/models/meal.dart';
 
 class MealItem extends StatelessWidget {
   // data and properties that will be entered to this widget
@@ -10,6 +10,8 @@ class MealItem extends StatelessWidget {
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
+  //another property for handling deleting button when we back from details
+  final Function removeItem;
   //Constructor of This Class
 
   MealItem(
@@ -18,7 +20,8 @@ class MealItem extends StatelessWidget {
       @required this.complexity,
       @required this.duration,
       @required this.imageUrl,
-      @required this.title});
+      @required this.title,
+      @required this.removeItem});
 
   //Function or Getter To handle Complexity Values of Enum
   String get getValueComplexity {
@@ -56,7 +59,14 @@ class MealItem extends StatelessWidget {
 
   //This method for tap at specific one of the meals and route to it's path and details
   void selectMeal(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed(MealDetails.routeName, arguments: id);
+    Navigator.of(ctx)
+        .pushNamed(MealDetails.routeName, arguments: id)
+        .then((valueID) {
+      if (valueID != null) {
+        //This function will be implemented in other widget to delete with the id we pass to it from pop method
+        removeItem(valueID);
+      }
+    });
   }
 
   @override
