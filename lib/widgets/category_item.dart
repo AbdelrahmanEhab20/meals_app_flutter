@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import '../screens/category_meals.dart';
 
-class property extends StatelessWidget {
+class CategoryItem extends StatelessWidget {
   final String id;
   final String title;
   final Color color;
 
   //Constructor of The Class
-  property(this.id, this.title, this.color);
+  CategoryItem(this.id, this.title, this.color);
 
   //Navigator Function passed in onTap: ()=> Will be Called as Push() before we editing the route property in main.dart
   // void selectCategory(BuildContext ctx) {
@@ -15,6 +15,7 @@ class property extends StatelessWidget {
   //     return CategoryMeals(id, title);
   //   }));
   // }
+  
 //Navigator Function passed in onTap: ()=> Will be Called as PushNamed() after we editing the route property in main.dart
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(CategoryMeals.routeName,

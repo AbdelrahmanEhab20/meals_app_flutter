@@ -55,7 +55,7 @@ class _TapsWidgetState extends State<TapsWidget> {
         selectedItemColor: Colors.black,
         currentIndex: _selectedIndexPage,
         type: BottomNavigationBarType.shifting,
-        //Default Is Fixed Type instead of Shifting
+        //Default Is Fixed Type instead of Shifting0
         items: [
           BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,

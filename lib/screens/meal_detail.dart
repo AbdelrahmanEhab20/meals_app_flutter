@@ -5,12 +5,13 @@ class MealDetails extends StatelessWidget {
   //path fo this page
   static const routeName = '/meal-detail';
 
-  //get the favoutite toggle function from main
+  //get the favorite toggle function from main
   final Function _toggleFavorites;
   //return true or false to toggle on icons
   final Function isFavoriteElement;
 
   MealDetails(this._toggleFavorites, this.isFavoriteElement);
+  
   //Builder Method for Widget of Section Tittle
   Widget buildSelectedTitle(BuildContext ctx, String text) {
     return Container(

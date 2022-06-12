@@ -105,6 +105,7 @@ class begriming extends State<MyApp> {
             )),
       ),
       // home:Categories() ,
+      initialRoute: '/',
       routes: {
         '/': (context) => TapsWidget(favoriteMeals),
         CategoryMeals.routeName: (ctx) => CategoryMeals(_availableMeals),
@@ -112,6 +113,7 @@ class begriming extends State<MyApp> {
             MealDetails(_toggleFavorites, isFavoriteMeal),
         Filters.routeName: (ctx) => Filters(_filters, _saveFilters),
       },
+      // onGenerateRoute: ,
       onUnknownRoute: ((settings) {
         return MaterialPageRoute(builder: ((context) => Categories()));
       }),

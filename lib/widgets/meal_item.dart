@@ -58,14 +58,14 @@ class MealItem extends StatelessWidget {
 
   //This method for tap at specific one of the meals and route to it's path and details
   void selectMeal(BuildContext ctx) {
-    Navigator.of(ctx)
-        .pushNamed(MealDetails.routeName, arguments: id)
-        .then((valueID) {
-      if (valueID != null) {
-        //This function will be implemented in other widget to delete with the id we pass to it from pop method
-        // removeItem(valueID);
-      }
-    });
+    Navigator.of(ctx).pushNamed(MealDetails.routeName, arguments: id);
+    /***************************** */
+    //Was Dealing with deleting items from the category Meals and when we return it appears again
+    //   .then((valueID) {
+    // if (valueID != null) {
+    //   //This function will be implemented in other widget to delete with the id we pass to it from pop method
+    //   // removeItem(valueID);
+    // }
   }
 
   @override
