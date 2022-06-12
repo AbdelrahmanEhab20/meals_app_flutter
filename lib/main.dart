@@ -15,6 +15,8 @@ class MyApp extends StatefulWidget {
 }
 
 class begriming extends State<MyApp> {
+  // map for the filters at the start
+  // and all values set to false
   Map<String, bool> _filters = {
     'glutenFree': false,
     'vegetarian': false,

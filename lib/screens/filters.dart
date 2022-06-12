@@ -20,7 +20,8 @@ class _FiltersState extends State<Filters> {
   var _vegan = false;
   var _lactosFree = false;
 
-//To Get the values when we load this page before build context and save them
+//To Get the values when we load this page before build context
+// and save them
   @override
   void initState() {
     _glutenFree = widget.currentFilters['glutenFree'];
@@ -57,7 +58,7 @@ class _FiltersState extends State<Filters> {
                 };
                 widget.saveFilters(selcetedFilters);
               },
-              icon: Icon(Icons.save_alt_sharp))
+              icon: Icon(Icons.save))
         ],
       ),
       drawer: MainDrawer(),

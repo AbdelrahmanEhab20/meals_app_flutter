@@ -9,14 +9,15 @@ class CategoryItem extends StatelessWidget {
   //Constructor of The Class
   CategoryItem(this.id, this.title, this.color);
 
-  //Navigator Function passed in onTap: ()=> Will be Called as Push() before we editing the route property in main.dart
+  // Navigator Function passed in onTap: ()=> Will be Called as Push() before we editing the route property in main.dart
   // void selectCategory(BuildContext ctx) {
   //   Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
   //     return CategoryMeals(id, title);
   //   }));
   // }
-  
-//Navigator Function passed in onTap: ()=> Will be Called as PushNamed() after we editing the route property in main.dart
+
+//Navigator Function passed in onTap: ()=> Will be Called as PushNamed()
+// after we editing the route property in main.dart + passing the arguments to the CategoryMeals Widget ...
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(CategoryMeals.routeName,
         arguments: {'id': id, 'title': title});

@@ -38,7 +38,7 @@ class _CategoryMealsState extends State<CategoryMeals> {
       categoryTitle = routeArgs['title'];
       final categoryId = routeArgs['id'];
       // Get The Specific Data that match this meal thats from categories list in dummy_Data with the help of Category-ID
-      //replace it with the availavleMeals List to handle the filters Data ..................
+      //replace it with the availableMeals List to handle the filters Data ..................
       displayedMeals = widget.availableMeals.where((meal) {
         return meal.categories.contains(categoryId);
       }).toList();
