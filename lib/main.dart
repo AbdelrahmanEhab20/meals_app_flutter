@@ -11,10 +11,10 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<MyApp> createState() => begriming();
 }
 
-class _MyAppState extends State<MyApp> {
+class begriming extends State<MyApp> {
   Map<String, bool> _filters = {
     'glutenFree': false,
     'vegetarian': false,
@@ -22,8 +22,13 @@ class _MyAppState extends State<MyApp> {
     'lactoseFree': false,
   };
 
+  //to start Dealing with Filters and make them available
   List<Meal> _availableMeals = DUMMY_MEALS;
+  //to start Dealing with favorite items in our app and
+  // at the begaining is empty list
+  List<Meal> favoriteMeals = [];
 
+//Function For Handling the State of Filters
   void _saveFilters(Map<String, bool> filtersData) {
     setState(() {
       _filters = filtersData;
@@ -43,6 +48,32 @@ class _MyAppState extends State<MyApp> {
         return true;
       }).toList();
     });
+  }
+
+//Function For Handling the State of Favorites
+  void _toggleFavorites(String mealId) {
+    //indexWhere --> Check if This element of part of that list
+    //and gives us it's index
+    final existingIndex = favoriteMeals.indexWhere((meal) => meal.id == mealId);
+    // if existingIndex = number greater than 0
+    // then it's exist if -1 then add it to this list
+    if (existingIndex >= 0) {
+      setState(() {
+        //it's exist so delete when we click btn again
+        favoriteMeals.removeAt(existingIndex);
+      });
+    } else {
+      setState(() {
+        //first meal will be found will be added to favorite list
+        favoriteMeals.add(DUMMY_MEALS.firstWhere((meal) => meal.id == mealId));
+      });
+    }
+  }
+
+// For Check If this item with that id in favorite list of not to mark it
+  bool isFavoriteMeal(String id) {
+    //run on each element with any()
+    return favoriteMeals.any((meal) => meal.id == id);
   }
 
   @override
@@ -75,9 +106,10 @@ class _MyAppState extends State<MyApp> {
       ),
       // home:Categories() ,
       routes: {
-        '/': (context) => TapsWidget(),
+        '/': (context) => TapsWidget(favoriteMeals),
         CategoryMeals.routeName: (ctx) => CategoryMeals(_availableMeals),
-        MealDetails.routeName: (ctx) => MealDetails(),
+        MealDetails.routeName: (ctx) =>
+            MealDetails(_toggleFavorites, isFavoriteMeal),
         Filters.routeName: (ctx) => Filters(_filters, _saveFilters),
       },
       onUnknownRoute: ((settings) {

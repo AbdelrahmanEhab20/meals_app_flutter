@@ -48,11 +48,11 @@ class _CategoryMealsState extends State<CategoryMeals> {
   }
 
   //Implement Remove Function
-  void _removeMeal(String backMealId) {
-    setState(() {
-      displayedMeals.removeWhere((meal) => meal.id == backMealId);
-    });
-  }
+  // void _removeMeal(String backMealId) {
+  //   setState(() {
+  //     displayedMeals.removeWhere((meal) => meal.id == backMealId);
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +72,6 @@ class _CategoryMealsState extends State<CategoryMeals> {
             duration: displayedMeals[index].duration,
             imageUrl: displayedMeals[index].imageUrl,
             title: displayedMeals[index].title,
-            removeItem: _removeMeal,
           );
         },
       ),

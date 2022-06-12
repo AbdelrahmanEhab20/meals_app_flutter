@@ -5,6 +5,12 @@ class MealDetails extends StatelessWidget {
   //path fo this page
   static const routeName = '/meal-detail';
 
+  //get the favoutite toggle function from main
+  final Function _toggleFavorites;
+  //return true or false to toggle on icons
+  final Function isFavoriteElement;
+
+  MealDetails(this._toggleFavorites, this.isFavoriteElement);
   //Builder Method for Widget of Section Tittle
   Widget buildSelectedTitle(BuildContext ctx, String text) {
     return Container(
@@ -94,13 +100,14 @@ class MealDetails extends StatelessWidget {
           ],
         ),
       ),
+      //Demo For Know how to pop page
+      //now it will be for toggle favorite
       floatingActionButton: FloatingActionButton(
         splashColor: Colors.amber,
         backgroundColor: Colors.teal,
-        child: Icon(Icons.delete_forever_sharp),
-        onPressed: () {
-          Navigator.of(context).pop(mealId);
-        },
+        child: Icon(
+            isFavoriteElement(mealId) ? Icons.stars_sharp : Icons.star_border),
+        onPressed: () => _toggleFavorites(mealId),
       ),
     );
   }

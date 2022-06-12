@@ -11,7 +11,7 @@ class MealItem extends StatelessWidget {
   final Complexity complexity;
   final Affordability affordability;
   //another property for handling deleting button when we back from details
-  final Function removeItem;
+  // final Function removeItem;
   //Constructor of This Class
 
   MealItem(
@@ -20,8 +20,7 @@ class MealItem extends StatelessWidget {
       @required this.complexity,
       @required this.duration,
       @required this.imageUrl,
-      @required this.title,
-      @required this.removeItem});
+      @required this.title});
 
   //Function or Getter To handle Complexity Values of Enum
   String get getValueComplexity {
@@ -64,7 +63,7 @@ class MealItem extends StatelessWidget {
         .then((valueID) {
       if (valueID != null) {
         //This function will be implemented in other widget to delete with the id we pass to it from pop method
-        removeItem(valueID);
+        // removeItem(valueID);
       }
     });
   }

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:mealsappp/models/meal.dart';
 import '../widgets/main_drawer.dart';
 import '../screens/categories.dart';
 import '../screens/favorites.dart';
 
 class TapsWidget extends StatefulWidget {
+  final List<Meal> favoriteList;
+
+  TapsWidget(this.favoriteList);
   @override
   State<TapsWidget> createState() => _TapsWidgetState();
 }
@@ -13,11 +17,20 @@ class _TapsWidgetState extends State<TapsWidget> {
 
   //we can edit this list to be a small map and give keys value as page and title key for each page ,
   //so when we tap on specific tap it will pass the title of this screen
-  final List<Map<String, Object>> _pages = [
-    {"page": Categories(), 'title': 'Categories'},
-    {"page": Favorites(), 'title': 'Favorites'}
-  ];
+  List<Map<String, Object>> _pages;
   int _selectedIndexPage = 0;
+
+  @override
+  void initState() {
+    _pages = [
+      {"page": Categories(), 'title': 'Categories'},
+      // Pass The Favorite List For it's Widget  but it will pass error because
+      //it doesn't allow widget here ,
+      // final will be removed and intialized it in initstate
+      {"page": Favorites(widget.favoriteList), 'title': 'Favorites'}
+    ];
+    super.initState();
+  }
 
   void _pageSelected(int index) {
     setState(() {
